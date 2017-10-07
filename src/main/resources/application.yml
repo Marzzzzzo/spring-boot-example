@@ -1,0 +1,34 @@
+server:
+    port: 8080
+    context-path: /k2-quality/
+
+spring:
+    datasource:
+          name: test
+          url: jdbc:mysql://localhost:3306/gvoapp?useSSL=false&useUnicode=true&characterEncoding=utf8
+          username: root
+          password: root
+          driver-class-name: com.mysql.jdbc.Driver
+#        name: test
+#        url: jdbc:mysql://10.1.10.60:3306/db_qms_poc_2?useSSL=false
+#        username: root
+#        password: passw0rd
+#        driver-class-name: com.mysql.jdbc.Driver
+#        name: test
+#        url: jdbc:mysql://127.0.0.1:3306/db_qms_poc?useSSL=false
+#        username: root
+#        password: root
+#        driver-class-name: com.mysql.jdbc.Driver
+
+    http:
+      encoding:
+        enabled: true
+        force: true
+        charset: utf-8
+
+mybatis:
+    mapperLocations: classpath:/mapper/*.xml
+    typeAliasesPackage: com.k2data.k2app.quality.domain.po
+
+logging:
+  config: classpath:log4j2.xml
